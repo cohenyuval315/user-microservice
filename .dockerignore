@@ -1,0 +1,10 @@
+venv
+#requirements
+docker-compose/
+CHANGELOG.md
+LICENSE
+CONTRIBUTING.md
+README.md
+scripts
+.docker
+*Dockerfile*

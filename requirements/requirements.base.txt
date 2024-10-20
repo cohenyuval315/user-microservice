@@ -1,0 +1,60 @@
+
+
+# FastAPI and related components
+fastapi[all]          # FastAPI framework
+uvicorn[standard]     # ASGI server for FastAPI
+gunicorn              # WSGI HTTP server for running the app in production
+
+# Asynchronous Task Management (Celery)
+celery
+celery[redis]         # Distributed task queue for background jobs
+celery[beat]
+redis                 # Redis for Celery and caching
+
+# Authentication, Security, and Cryptography
+Authlib               # OAuth and JWT for authentication
+passlib[bcrypt]       # Password hashing
+cryptography          # Cryptographic recipes and primitives
+fastapi-csrf-protect  # CSRF protection
+
+# Session and Request Management
+user_agents           # Parsing user agent strings
+fastapi-sessions      # Session management (Redis-backed sessions)
+fastapi-limiter       # Rate limiting
+
+# Performance Monitoring
+prometheus-fastapi-instrumentator  # Monitoring and metrics for Prometheus
+
+# Database and Migrations
+alembic               # Database migrations (for SQLAlchemy)
+sqlalchemy[asyncio]            # ORM for database access
+asyncpg               # Asynchronous PostgreSQL client
+databases[postgresql] 
+databases[asyncpg]
+# psycopg2-binary # create all is synch 
+psycopg[binary] # to use create all , you need this , is synch 
+# File Handling and Magic Number Detection
+python-magic          # For MIME type detection (useful in file uploads)
+
+# Testing and Profiling (Optional but Useful for Production)
+pytest                # Testing framework
+pytest-cov            # Test coverage
+pytest-asyncio        # Async testing
+httpx                 # HTTP client for testing API endpoints
+hypothesis # testing helper 
+schemathesis #  based on hypothesis, proven bt research
+
+# Event Loop and Performance
+uvloop                # High-performance event loop
+py-spy                # Profiling tool (optional but useful for production profiling)
+
+pycountry
+pytz
+sqlmodel
+
+line_profiler
+memory_profiler
+# aiocache[redis] # redudant if need uses  cluster
+# python-magic # redudant if external service
+# aiofiles # redudant if external service
+# secure # redudant if reverse proxy or api gateway or infrastracture handle those.

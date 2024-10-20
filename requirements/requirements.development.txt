@@ -1,0 +1,4 @@
+debugpy
+loguru
+socketify
+pylint

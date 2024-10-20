@@ -1,0 +1,12 @@
+__pycache__/
+node_modules/
+**/*secret*
+venv
+logs
+.hypothesis
+.pytest_cache
+
+.env.*
+
+# Exclude .env.example from being ignored
+!.env.example

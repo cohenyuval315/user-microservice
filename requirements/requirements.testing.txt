@@ -1,0 +1,16 @@
+pytest
+pytest-mock
+pytest-cov
+pytest-xdist
+pytest-asyncio
+pytest-jsonschema
+pytest-bdd
+pytest-json
+pytest-html
+pytest-ordering
+pytest-timeout
+pytest-loguru
+httpx
+anyio
+locust
+loguru

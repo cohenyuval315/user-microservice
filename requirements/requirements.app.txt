@@ -1,0 +1,16 @@
+fastapi[all]
+uvicorn[standard]
+user_agents
+gunicorn
+fastapi-limiter
+Authlib
+celery
+redis
+sqlalchemy
+alembic
+passlib[bcrypt]
+cryptography
+fastapi-csrf-protect
+python-magic
+prometheus-fastapi-instrumentator
+psycopg2-binary

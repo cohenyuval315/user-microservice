@@ -1,0 +1,1 @@
+core components that are central to the application's architecture.

@@ -1,0 +1,64 @@
+services:
+  backend:
+    container_name: user-service
+    stop_signal: SIGTERM
+    build:
+      context: ..
+      dockerfile: ./.docker/Dockerfile.base
+      args:
+        BASE_IMAGE: python:3.11-slim
+        PROJECT_ROOT: ..
+        DOCKER_ROOT: code        
+        ENVIRONMENT: development
+        USER: docker
+        USER_ID: 1234
+        GROUP_ID: 1234
+        GROUP: customgroup
+        ECHO: true
+        ECHO_SLEEP_SECONDS: 2
+        COPY_FILES: true
+
+    ports:
+    - "9444:9444"
+    - "8001:8001"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONDONTWRITEBYTECODE=1
+      
+    depends_on:
+      - db
+      - memory
+    # volumes:
+    #   - ..:.
+    command: sleep infinity
+
+  db:
+    image: postgres:13-alpine
+    container_name: user-service-db
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: mydatabase
+    ports:
+      - "5432:5432"
+    # volumes:
+    #   - postgres_data:/var/lib/postgresql/data  
+
+  memory:
+    image: redis:alpine
+    container_name: user-service-redis
+    ports:
+      - "6379:6379"
+    # volumes:
+    #   - redis_data:/var/lib/redis/data
+
+
+# volumes:
+#   redis_data:
+#   postgres_data:
+
+# networks:
+#   monitoring:
+#     name: backend-monitoring-network
+#     driver: bridge
+
